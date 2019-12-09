@@ -1,0 +1,11 @@
+Baixo Consumo:
+https://andreasrohner.at/posts/Electronics/How-to-modify-an-Arduino-Pro-Mini-clone-for-low-power-consumption/
+
+Pino analógico como digital:
+dhttps://electronics.stackexchange.com/questions/67103/can-i-use-the-analog-pins-on-the-arduino-for-my-project-as-digital
+
+RX/TX como digital:
+https://arduino.stackexchange.com/questions/3772/can-tx-and-rx-pins-on-the-uno-be-used-like-regular-digital-pins
+
+Múltiplas entradas analógicas em um pino:
+https://www.instructables.com/id/Multiple-Analog-Inputs-on-Only-One-Analoge-Pin/

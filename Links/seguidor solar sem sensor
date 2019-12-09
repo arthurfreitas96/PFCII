@@ -1,0 +1,15 @@
+https://forum.arduino.cc/index.php?topic=253127.0
+
+http://www.cerebralmeltdown.com/arduino-sun-tracking-heliostat-program-documentation/
+
+http://www.psa.es/sdg/sunpos.htm
+
+https://www.hindawi.com/journals/js/2019/3681031/
+
+https://www.aliensolar.com/blogs/blog-and-news/single-and-dual-axis-solar-tracker-using-arduino-and-the-corresponding-increase-in-solar-energy-output
+
+https://en.wikipedia.org/wiki/Solar_tracker#Reflective_losses
+:
+The Sun travels through 360 degrees east to west per day, but from the perspective of any fixed location the visible portion is 180 degrees during an average 1/2 day period (more in spring and summer; less, in fall and winter). Local horizon effects reduce this somewhat, making the effective motion about 150 degrees. A solar panel in a fixed orientation between the dawn and sunset extremes will see a motion of 75 degrees to either side, and thus, according to the table above, will lose over 75% of the energy in the morning and evening. Rotating the panels to the east and west can help recapture those losses. A tracker that only attempts to compensate for the east-west movement of the Sun is known as a single-axis tracker.
+
+https://en.wikipedia.org/wiki/Backtracking

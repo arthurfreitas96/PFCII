@@ -1,0 +1,13 @@
+CONSUMO:
+https://www.instructables.com/id/ARDUINO-ENERGY-METER/ (circuito simples, sensores simples)
+
+https://electronicsforu.com/electronics-projects/dc-panel-meter-arduino (circuito mais completo, sugestao de impressão em pcb (que nao é para o meu caso, porque eu pretendo modificar o circuito), eu trocaria a impressão em lcd por gravação em cartão sd, trocaria o arduino uno pelo pro mini)
+
+DEIXAR O SERVO SPLASHPROOF:
+https://www.instructables.com/id/Waterproof-your-servo-motors/
+
+OBSOLETO:
+
+DISTANCIA: (não vou usar)
+https://maker.pro/arduino/tutorial/creating-long-distance-serial-communication-using-an-arduino-and-an-rs-485-module
+

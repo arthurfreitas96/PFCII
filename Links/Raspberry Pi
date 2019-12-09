@@ -1,0 +1,8 @@
+comunicacao arduino e rasp fia nrf
+https://circuitdigest.com/microcontroller-projects/wireless-rf-communication-between-arduino-and-raspberry-pi-using-nrf24l01
+
+setup do tiny core:
+https://www.youtube.com/watch?v=aKvW59uk4PY
+
+estilo de ihm:
+tinha visto um video com um micro "SO" num attiny85, achei a IHM interessante, simplista com comandos em siglas
