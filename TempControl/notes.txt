@@ -1,1 +1,9 @@
 Temperature control notes:
+
+In this folder, there are .ino codes that will be used to control the
+temperature inside the control box. The temperature is measure using an
+one-wire bus of DS18B20 sensors and the code is optimized in order to use
+only OneWire library, and there's no need to use the DallasTemperature
+library. The first version uses serial monitor to display the values that are
+measured by the sensors. The second version is up to go, without serial monitor,
+and is lighter than the first one.
