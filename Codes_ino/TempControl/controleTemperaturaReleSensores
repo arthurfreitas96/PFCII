@@ -1,0 +1,57 @@
+#include <OneWire.h>
+
+// Declaring OneWire variable
+OneWire myds(6); // Defining OneWire bus inside parenthesis
+// Defining sensor adresses manually
+uint8_t dsaddr1[8] = { 0x28, 0xD4, 0x2D, 0x79, 0xA2, 0x01, 0x03, 0xB6 };
+uint8_t dsaddr2[8] = { 0x28, 0xA2, 0xA5, 0x79, 0xA2, 0x00, 0x03, 0xAD };
+uint8_t dsaddr3[8] = { 0x28, 0xA6, 0xED, 0x79, 0xA2, 0x01, 0x03, 0x62 };
+uint8_t dsaddr4[8] = { 0x28, 0x0B, 0x84, 0x79, 0xA2, 0x00, 0x03, 0x52 };
+
+// To the control pin of the relay module
+int relayPin = 5;
+ 
+// Stores the relay state
+int relayState = 0;
+
+void dsconvertcommand(OneWire myds) {
+  myds.reset();
+  myds.write(0xCC, 1);        // send Skip ROOM command, next command will be for all devices, see datasheet*
+  myds.write(0x44, 1);        // send Convert T command, start conversion
+}
+
+float dsreadtemp(OneWire myds, byte addr[8]) {
+  int i;
+  byte data[12];
+  float celsius;
+  myds.reset();
+  myds.select(addr);
+  myds.write(0xBE);  // Read scratchpad command
+
+  for (i = 0; i < 9; i++) {// We need 9 bytes
+    data[i] = myds.read();
+  }
+  
+  // convert the data to actual temperature
+  unsigned int raw = (data[1] << 8) | data[0];
+  raw = raw << 2; // 0 for 12bit res. / 1 for 11bit res. / 2 for 10bit res. / 3 for 9bit res.
+  celsius = (float)raw / 16.0;
+  return celsius;
+}
+
+void setup(void) {
+  pinMode(relayPin, OUTPUT); 
+  digitalWrite(relayPin, 0);
+}
+
+void loop(void) {
+  dsconvertcommand(myds); // respect delay for proper convertion
+  delay(200); // 94ms for 9bit res. / 188ms for 10bit res. / 375ms for 11bit res. / 750ms for 12bit res.
+  //Read temperatures
+  TempRead = (((dsreadtemp(myds, dsaddr1) - 0.75) > 28) || (dsreadtemp(myds, dsaddr2) > 28) || (dsreadtemp(myds, dsaddr3) > 28) || (dsreadtemp(myds, dsaddr4) > 28));
+  if(TempRead != relayState){
+    //Relay state inversion
+    relayState = !relayState;
+    //Relay command
+    digitalWrite(relayPin, relayState);}
+}
